@@ -1,0 +1,1048 @@
+package com.sample
+import java.util.Arrays;
+import java.util.ArrayList
+import javax.swing.JLabel;
+import java.awt.*;
+import java.util.ArrayList
+import javax.swing.JRadioButton
+import org.kie.api.runtime.KieRuntime
+import java.awt.event.*;
+import java.util.List
+import javax.swing.*;
+import javax.swing.JOptionPane
+import javax.swing.JFrame
+import javax.swing.JPanel
+global JFrame window
+global javax.swing.JTextArea textArea
+import com.sample.Answer;
+rule "init"
+    when
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Vloger");
+    types.add("Musician");
+    Answer answer = que(window, kcontext.getKieRuntime(), "So you want to watch YouTube...", types);
+    insert (answer);
+end
+rule "r1"
+    when
+    Answer(question == "So you want to watch YouTube..." && answer == "Vloger")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Collab");
+    types.add("Single");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you want a collab or single channel?", types);
+    insert (answer);
+end
+rule "r2"
+    when
+    Answer(question == "Do you want a collab or single channel?" && answer == "Collab")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Old");
+    types.add("New");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you want to watch new videos or two year old videos?", types);
+    insert (answer);
+end
+rule "r3"
+    when
+    Answer(question == "Do you want to watch new videos or two year old videos?" && answer == "New")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Sick");
+    types.add("Happy");
+    Answer answer = que(window, kcontext.getKieRuntime(), "People in relationships make you...", types);
+    insert (answer);
+end
+rule "r4"
+    when
+    Answer(question == "People in relationships make you..." && answer == "Sick")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Absolutely");
+    types.add("What's that?");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Are you obsessed with doctor who?", types);
+    insert (answer);
+end
+rule "r5"
+    when
+    Answer(question == "Are you obsessed with doctor who?" && answer == "Absolutely")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Tardistacular");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r6"
+    when
+    Answer(question == "Are you obsessed with doctor who?" && answer == "What's that?")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Five");
+    types.add("Two");
+    Answer answer = que(window, kcontext.getKieRuntime(), "How many people do you want to watch?", types);
+    insert (answer);
+end
+rule "r7"
+    when
+    Answer(question == "How many people do you want to watch?" && answer == "Five")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Fiveawesomegirls");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r8"
+    when
+    Answer(question == "How many people do you want to watch?" && answer == "Two")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Short");
+    types.add("Tall");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you want to watch short or tall people?", types);
+    insert (answer);
+end
+rule "r9"
+    when
+    Answer(question == "Do you want to watch short or tall people?" && answer == "Short")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Shortsisters756");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r10"
+    when
+    Answer(question == "Do you want to watch short or tall people?" && answer == "Tall")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Girls");
+    types.add("Boys");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Girls or boys?", types);
+    insert (answer);
+end
+rule "r11"
+    when
+    Answer(question == "Girls or boys?" && answer == "Girls")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Sistersalad");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r12"
+    when
+    Answer(question == "Girls or boys?" && answer == "Boys")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Vlogbrothers");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r13"
+    when
+    Answer(question == "People in relationships make you..." && answer == "Happy")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Vloglovers");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r14"
+    when
+    Answer(question == "Do you want to watch new videos or two year old videos?" && answer == "Old")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Fiveawesomeguys");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r15"
+    when
+    Answer(question == "Do you want a collab or single channel?" && answer == "Single")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("American");
+    types.add("British");
+    types.add("Something else");
+    Answer answer = que(window, kcontext.getKieRuntime(), "What kind of accent do you like?", types);
+    insert (answer);
+end
+rule "r16"
+    when
+    Answer(question == "What kind of accent do you like?" && answer == "Something else")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Canada sucks!");
+    types.add("Yeah!");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Canada's cool right?", types);
+    insert (answer);
+end
+rule "r17"
+    when
+    Answer(question == "Canada's cool right?" && answer == "Yeah!")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Guinarolla");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r18"
+    when
+    Answer(question == "Canada's cool right?" && answer == "Canada sucks!")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Jockes about chickens");
+    types.add("Self-depricating humor");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Which is funnier?", types);
+    insert (answer);
+end
+rule "r19"
+    when
+    Answer(question == "Which is funnier?" && answer == "Self-depricating humor")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Communitychannel");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r20"
+    when
+    Answer(question == "Which is funnier?" && answer == "Jockes about chickens")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Robofilet");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r21"
+    when
+    Answer(question == "What kind of accent do you like?" && answer == "British")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("No");
+    types.add("Duh");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you find David Tennant attractive?", types);
+    insert (answer);
+end
+rule "r22"
+    when
+    Answer(question == "Do you find David Tennant attractive?" && answer == "Duh")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Littleradge");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r23"
+    when
+    Answer(question == "Do you find David Tennant attractive?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("No");
+    types.add("Yes");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Well then, are boys who play instrument hot?", types);
+    insert (answer);
+end
+rule "r24"
+    when
+    Answer(question == "Well then, are boys who play instrument hot?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("No");
+    types.add("Yes");
+    types.add("Don't care");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you hate twilight?", types);
+    insert (answer);
+end
+rule "r25"
+    when
+    Answer(question == "Do you hate twilight?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Nermon");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r26"
+    when
+    Answer(question == "Do you hate twilight?" && answer == "Don't care")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Charlieissicoollike");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r27"
+    when
+    Answer(question == "Do you hate twilight?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Get out of my flawchart");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r28"
+    when
+    Answer(question == "Well then, are boys who play instrument hot?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Spontaneous");
+    types.add("Scripted");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you prefer scripted or spontaneous videos?", types);
+    insert (answer);
+end
+rule "r29"
+    when
+    Answer(question == "Do you prefer scripted or spontaneous videos?" && answer == "Spontaneous")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Missxrojas");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r30"
+    when
+    Answer(question == "Do you prefer scripted or spontaneous videos?" && answer == "Scripted")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Electricfaeriedust");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r31"
+    when
+    Answer(question == "What kind of accent do you like?" && answer == "American")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Never sings");
+    types.add("Sometimes sings");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Someone who sings or never sings?", types);
+    insert (answer);
+end
+rule "r32"
+    when
+    Answer(question == "Someone who sings or never sings?" && answer == "Never sings")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yes");
+    types.add("No");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you want daily videos?", types);
+    insert (answer);
+end
+rule "r33"
+    when
+    Answer(question == "Do you want daily videos?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Breakingnyc");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r34"
+    when
+    Answer(question == "Do you want daily videos?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("No");
+    types.add("Yes, please");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you need avice?", types);
+    insert (answer);
+end
+rule "r35"
+    when
+    Answer(question == "Do you need avice?" && answer == "Yes, please")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Peron75");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r36"
+    when
+    Answer(question == "Do you need avice?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("No, that's weird");
+    types.add("Yes");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you like seeing people play different version of themselves?", types);
+    insert (answer);
+end
+rule "r37"
+    when
+    Answer(question == "Do you like seeing people play different version of themselves?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Elmify");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r38"
+    when
+    Answer(question == "Do you like seeing people play different version of themselves?" && answer == "No, that's weird")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("More than 100,000");
+    types.add("Less than 100,000");
+    Answer answer = que(window, kcontext.getKieRuntime(), "How many subscribers do you prefer they have?", types);
+    insert (answer);
+end
+rule "r39"
+    when
+    Answer(question == "How many subscribers do you prefer they have?" && answer == "More than 100,000")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Talk world issues");
+    types.add("Rant and be adorable");
+    types.add("Put on make-up");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you want to watch someone...", types);
+    insert (answer);
+end
+rule "r40"
+    when
+    Answer(question == "Do you want to watch someone..." && answer == "Talk world issues")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Pogobat");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r41"
+    when
+    Answer(question == "Do you want to watch someone..." && answer == "Rant and be adorable")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Meekakitty");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r42"
+    when
+    Answer(question == "Do you want to watch someone..." && answer == "Put on make-up")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Michellephan");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r43"
+    when
+    Answer(question == "How many subscribers do you prefer they have?" && answer == "Less than 100,000")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Agreed");
+    types.add("What's typography?");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Typography is cool.", types);
+    insert (answer);
+end
+rule "r44"
+    when
+    Answer(question == "Typography is cool." && answer == "Agreed")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Xperpetualmotion");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r45"
+    when
+    Answer(question == "Typography is cool." && answer == "What's typography?")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Who are they?");
+    types.add("Yes");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you only watch fiveawesomes?", types);
+    insert (answer);
+end
+rule "r46"
+    when
+    Answer(question == "Do you only watch fiveawesomes?" && answer == "Who are they?")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yup");
+    Answer answer = que(window, kcontext.getKieRuntime(), "You sure are picky", types);
+    insert (answer);
+end
+rule "r47"
+    when
+    Answer(question == "You sure are picky" && answer == "Yup")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Try thatzak, everyone likes him");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r48"
+    when
+    Answer(question == "Do you only watch fiveawesomes?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Girls");
+    types.add("Boys");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Girls or Boys?", types);
+    insert (answer);
+end
+rule "r49"
+    when
+    Answer(question == "Girls or Boys?" && answer == "Boys")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Owlssayhoot");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r50"
+    when
+    Answer(question == "Girls or Boys?" && answer == "Girls")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Alanvlogs");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r51"
+    when
+    Answer(question == "Someone who sings or never sings?" && answer == "Sometimes sings")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("No");
+    types.add("Yes");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you like rapping?", types);
+    insert (answer);
+end
+rule "r52"
+    when
+    Answer(question == "Do you like rapping?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Hayleyghoover");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r53"
+    when
+    Answer(question == "Do you like rapping?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Of course");
+    types.add("Um, no");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you like songs about breakfast?", types);
+    insert (answer);
+end
+rule "r54"
+    when
+    Answer(question == "Do you like songs about breakfast?" && answer == "Of course")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Wheezywaiter");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r55"
+    when
+    Answer(question == "Do you like songs about breakfast?" && answer == "Um, no")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yes");
+    types.add("Not really");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you really like charts and graphs?", types);
+    insert (answer);
+end
+rule "r56"
+    when
+    Answer(question == "Do you really like charts and graphs?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Mickeleh");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r57"
+    when
+    Answer(question == "Do you really like charts and graphs?" && answer == "Not really")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yes");
+    types.add("Not my style");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you love all caps?", types);
+    insert (answer);
+end
+rule "r58"
+    when
+    Answer(question == "Do you love all caps?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Girls!");
+    types.add("Boys!");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do girls or boys rule?", types);
+    insert (answer);
+end
+rule "r59"
+    when
+    Answer(question == "Do girls or boys rule?" && answer == "Grils!")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Italktosnakes");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r60"
+    when
+    Answer(question == "Do girls or boys rule?" && answer == "Boys!")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Lukeconard");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r61"
+    when
+    Answer(question == "Do you love all caps?" && answer == "Not my style")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yes");
+    types.add("No");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you insist on watching a fiveawesomegirl?", types);
+    insert (answer);
+end
+rule "r62"
+    when
+    Answer(question == "Do you insist on watching a fiveawesomegirl?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("=D");
+    types.add("=(");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you like really, really happy people?", types);
+    insert (answer);
+end
+rule "r63"
+    when
+    Answer(question == "Do you insist on watching a fiveawesomegirl?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Devlishlypure");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r64"
+    when
+    Answer(question == "Do you like really, really happy people?" && answer == "=D")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Hopeonatenspeed");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r65"
+    when
+    Answer(question == "Do you like really, really happy people?" && answer == "=(")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Talk fast");
+    types.add("Talk slow");
+    Answer answer = que(window, kcontext.getKieRuntime(), "When not singin you want your vlogger to...", types);
+    insert (answer);
+end
+rule "r66"
+    when
+    Answer(question == "When not singin you want your vlogger to..." && answer == "Talk fast")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Fizzylimon");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "r67"
+    when
+    Answer(question == "When not singin you want your vlogger to..." && answer == "Talk slow")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Technology");
+    types.add("Books");
+    Answer answer = que(window, kcontext.getKieRuntime(), "You prefer your vlogger to review...", types);
+    insert (answer);
+end
+rule "r68"
+    when
+    Answer(question == "You prefer your vlogger to review..." && answer == "Technology")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Ijustine");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is:", types);
+    insert (answer);
+end
+rule "r69"
+    when
+    Answer(question == "You prefer your vlogger to review..." && answer == "Books")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Bandgeek8408");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "1"
+    when
+    Answer(question == "So you want to watch YouTube..." && answer == "Musician")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Muggle");
+    types.add("Wizard");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Wizard rocker or muggle musician?", types);
+    insert (answer);
+end
+rule "2"
+    when
+    Answer(question == "Wizard rocker or muggle musician?" && answer == "Wizard")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Kind of weird");
+    types.add("Awesome");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Wizard rock is...", types);
+    insert (answer);
+end
+rule "3"
+    when
+    Answer(question == "Wizard rock is..." && answer == "Kind of weird")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Feltbeats");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "4"
+    when
+    Answer(question == "Wizard rock is..." && answer == "Awesome")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yes");
+    types.add("No");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do you only want live performance?", types);
+    insert (answer);
+end
+rule "5"
+    when
+    Answer(question == "Do you only want live performance?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("KarensWrockViedos");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "6"
+    when
+    Answer(question == "Do you only want live performance?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("I'm a Weasley!");
+    types.add("As a Malfoy, I guess not");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Are you to buy Ministry of Magic CDs", types);
+    insert (answer);
+end
+rule "7"
+    when
+    Answer(question == "Are you to buy Ministry of Magic CDs" && answer == "I'm a Weasley!")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("MinistryOfMagicMusic");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "8"
+    when
+    Answer(question == "Are you to buy Ministry of Magic CDs" && answer == "As a Malfoy, I guess not")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("True");
+    types.add("False");
+    Answer answer = que(window, kcontext.getKieRuntime(), "The whomping willow is awesome.", types);
+    insert (answer);
+end
+rule "9"
+    when
+    Answer(question == "The whomping willow is awesome." && answer == "True")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("TheWhompingWillows");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "10"
+    when
+    Answer(question == "The whomping willow is awesome." && answer == "False")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("ButterBeerWrocks");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "11"
+    when
+    Answer(question == "Wizard rocker or muggle musician?" && answer == "Muggle")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yes");
+    types.add("No");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Is it necessary that they actually exist?", types);
+    insert (answer);
+end
+rule "12"
+    when
+    Answer(question == "Is it necessary that they actually exist?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("PaigerAilstone");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "13"
+    when
+    Answer(question == "Is it necessary that they actually exist?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Absolutely");
+    types.add("Not at all");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Is Lost the best show ever", types);
+    insert (answer);
+end
+rule "14"
+    when
+    Answer(question == "Is Lost the best show ever" && answer == "Absolutely")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("TheOceanicSixMusic");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "15"
+    when
+    Answer(question == "Is Lost the best show ever" && answer == "Not at all")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yes!");
+    types.add("Blech");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do You like it when couples make music?", types);
+    insert (answer);
+end
+rule "16"
+    when
+    Answer(question == "Do You like it when couples make music?" && answer == "Yes!")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yes!");
+    types.add("No");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do You like electronica?", types);
+    insert (answer);
+end
+rule "17"
+    when
+    Answer(question == "Do You like electronica?" && answer == "Yes!")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("AllCapsMusic");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "18"
+    when
+    Answer(question == "Do You like electronica?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("PomplamooseMusic");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "19"
+    when
+    Answer(question == "Do You like it when couples make music?" && answer == "Blech")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Yes");
+    types.add("No");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Are you easly offended?", types);
+    insert (answer);
+end
+rule "20"
+    when
+    Answer(question == "Are you easly offended?" && answer == "No")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("BobUrnham");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "21"
+    when
+    Answer(question == "Are you easly offended?" && answer == "Yes")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Heck yes!");
+    types.add("Not really");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do You really like ukuleles?", types);
+    insert (answer);
+end
+rule "22"
+    when
+    Answer(question == "Do You really like ukuleles?" && answer == "Heck yes!")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Nerdy");
+    types.add("Normal");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do You prefer really nerdy or normal songs?", types);
+    insert (answer);
+end
+rule "23"
+    when
+    Answer(question == "Do You prefer really nerdy or normal songs?" && answer == "Nerdy")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("SweetAfton23");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "24"
+    when
+    Answer(question == "Do You prefer really nerdy or normal songs?" && answer == "Normal")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Jaaaaaaa");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "25"
+    when
+    Answer(question == "Do You really like ukuleles?" && answer == "Not really")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Rock");
+    types.add("Mellow");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Do You want to mellow out or rock out?", types);
+    insert (answer);
+end
+rule "26"
+    when
+    Answer(question == "Do You want to mellow out or rock out?" && answer == "Mellow")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("SongsFromPaul");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "27"
+    when
+    Answer(question == "Do You want to mellow out or rock out?" && answer == "Rock")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Strange");
+    types.add("Normal");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Relatively normal or strange lyrics?", types);
+    insert (answer);
+end
+rule "28"
+    when
+    Answer(question == "Relatively normal or strange lyrics?" && answer == "Strange")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Random");
+    types.add("Miley");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Which is better - Miley Cyrus or randomness?", types);
+    insert (answer);
+end
+rule "29"
+    when
+    Answer(question == "Which is better - Miley Cyrus or randomness?" && answer == "Random")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("RhettAndLink");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "30"
+    when
+    Answer(question == "Which is better - Miley Cyrus or randomness?" && answer == "Miley")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("DaveDays");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "31"
+    when
+    Answer(question == "Relatively normal or strange lyrics?" && answer == "Normal")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("Piano");
+    types.add("Guitar");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Piano rock or guitar rock?", types);
+    insert (answer);
+end
+rule "32"
+    when
+    Answer(question == "Piano rock or guitar rock?" && answer == "Piano")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("MikeLombardoMusic");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+rule "33"
+    when
+    Answer(question == "Piano rock or guitar rock?" && answer == "Guitar")
+    then
+    ArrayList<String> types = new ArrayList<>();
+    types.add("DoctorNoise");
+    Answer answer = que(window, kcontext.getKieRuntime(), "Answer is: ", types);
+    insert (answer);
+end
+
+
+function void polec(JFrame window, KieRuntime krt, String s1) {
+    final JPanel p = new JPanel();
+    String t = s1;
+    p.add(new JLabel(t));
+    JOptionPane.showMessageDialog(window, p);
+}
+
+
+
+
+function Answer que(JFrame window, KieRuntime krt, String quest, ArrayList answeri) {
+    class Listener implements ItemListener {
+        private Answer answer;
+        private String chosen;
+        public Listener(Answer odp, String choosen) {
+            this.answer = odp;
+            this.chosen = choosen;
+        }
+        @Override
+        public void itemStateChanged(ItemEvent event) {
+            if (event.getStateChange() == ItemEvent.SELECTED) {
+                answer.setAnswer(chosen);
+            }
+        }
+    }
+    Answer answer = new Answer(quest, (String) answeri.get(0));
+    final JPanel panel = new JPanel(new GridLayout(0, 1));
+    panel.add(new JLabel(quest));
+    ArrayList < JRadioButton > ButtonList = new ArrayList < > ();
+    for (int i = 0; i < answeri.size(); i++) {
+        String text = (String) answeri.get(i);
+        JRadioButton nowy = new JRadioButton(text);
+        Listener nListener = new Listener(answer, text);
+        nowy.addItemListener(nListener);
+        ButtonList.add(nowy);
+    }
+    ButtonList.get(0).setSelected(true);
+    answer.setAnswer((String) answeri.get(0));
+    ButtonGroup group = new ButtonGroup();
+    for (int i = 0; i < ButtonList.size(); i++) {
+        group.add(ButtonList.get(i));
+        panel.add(ButtonList.get(i));
+    }
+    Object[] options = {
+        "Proceed"
+    };
+    if (JOptionPane.showConfirmDialog(window, panel, "Question", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE) < 0) {
+        answer.setAnswer("Zakoncz program");
+    }
+    return answer;
+}
